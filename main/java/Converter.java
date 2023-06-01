@@ -16,6 +16,7 @@ public class Converter extends JFrame implements ActionListener{
             {
                     "units",
                     "Indian Rupee",
+                    "Pakistani Rupee",
                     "US Dollar",
                     "Canadian Dollar",
                     "Kenyan Shilling",
@@ -26,6 +27,7 @@ public class Converter extends JFrame implements ActionListener{
             };
 
     int Indian_Rupee = 82;
+    int Pakistani_Rupee = 280;
     int US_Dollar = 1;
     int Canadian_Dollar = 2;
     int Kenyan_Shilling = 132;
@@ -51,7 +53,7 @@ public class Converter extends JFrame implements ActionListener{
         from.setForeground(Color.black);
         add(from);
 
-        fromcountry = new JComboBox(new String[] { "Select One..", "India", "USA", "Canada", "Kenyan", "Ngeria", "Brazil", "Indonesia", "Philippine" });
+        fromcountry = new JComboBox(new String[] { "Select One..", "India", "Pakistan", "USA", "Canada", "Kenyan", "Ngeria", "Brazil", "Indonesia", "Philippine" });
         fromcountry.setBounds(100,165,150,30);
         fromcountry.setFont(new Font("Arial",Font.PLAIN,15));
 
@@ -81,7 +83,7 @@ public class Converter extends JFrame implements ActionListener{
         to.setForeground(Color.black);
         add(to);
 
-        tocountry = new JComboBox(new String[] { "Select One..", "India", "USA", "Canada", "Kenyan", "Ngeria", "Brazil", "Indonesia", "Philippine" });
+        tocountry = new JComboBox(new String[] { "Select One..", "India", "Pakistan", "USA", "Canada", "Kenyan", "Ngeria", "Brazil", "Indonesia", "Philippine" });
         tocountry.setBounds(100,240,150,30);
         tocountry.setFont(new Font("Arial",Font.PLAIN,15));
         //tocountry.setForeground(Color.white);
@@ -178,6 +180,9 @@ public class Converter extends JFrame implements ActionListener{
                     case "India":
                         amountInPounds = amountToChange / Indian_Rupee;
                         break;
+                    case "Pakistan":
+                        amountInPounds = amountToChange / Pakistani_Rupee;
+                        break;
                     case "USA":
                         amountInPounds = amountToChange / US_Dollar;
                         break;
@@ -207,6 +212,9 @@ public class Converter extends JFrame implements ActionListener{
                 switch (tocountry.getSelectedItem().toString()) {
                     case "India":
                         newamount = amountInPounds * Indian_Rupee;
+                    case "Pakistan":
+                        newamount = amountInPounds * Pakistani_Rupee;
+                        break;
                     case "USA":
                         newamount = amountInPounds * US_Dollar;
                         break;
